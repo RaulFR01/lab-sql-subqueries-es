@@ -113,6 +113,6 @@ WITH cte_suma AS (
     GROUP BY p.customer_id
 )
 
-SELECT customer_id 
+SELECT customer_id, suma_amount
 FROM cte_suma
 WHERE suma_amount > (SELECT AVG(suma_amount) from cte_suma)
